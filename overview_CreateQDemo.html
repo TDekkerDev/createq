@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/overview_CreateQ.css">
+    <title>PlayGround CreateQDemo</title>
+    <script src="JS/overviewmodal.js"></script>
+    <style>
+        .container-container {
+            display: block;
+            position: absolute;
+            margin: 50px;
+        }
+
+        .legenda-container {
+            display: inline-flex;
+            flex-direction: row;
+            align-items: flex-start;
+            width: auto;
+            height: 650px;
+            padding: 5px;
+            border: 2px solid black;
+        }
+
+        .legenda {
+            display: inline-flex;
+            flex-direction: column;
+            min-height: -webkit-fill-available;
+            margin: 1px;
+            margin-right: 10px;
+            border: 2px solid black;
+        }
+
+        .content-container {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: baseline;
+            min-height: -webkit-fill-available;
+            border: 2px solid black;
+        }
+
+        .btn-legenda {
+            display: block;
+            padding: 5px;
+            margin: 10px;
+        }
+
+        .Buttons-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5px;
+            margin: 10px;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+
+        .addButton-container {
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-bottom: 5px;
+        }
+
+        .button {
+            border: none;
+            margin: 5px;
+        }
+
+        .remButton {
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-top: 5px;
+        }
+        /* Disable the remove button if the count is 0 */
+        .remButton.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+        }
+
+        .btnCounter-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* The Modal (background) */
+        .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        min-height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: 10%;
+        padding: 0;
+        border: 1px solid #888;
+        width: 80%;
+        min-height: 600px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s
+        }
+
+        /* Add Animation */
+        @-webkit-keyframes animatetop {
+        from {top:-300px; opacity:0} 
+        to {top:0; opacity:1}
+        }
+
+        @keyframes animatetop {
+        from {top:-300px; opacity:0}
+        to {top:0; opacity:1}
+        }
+
+        /* The Close Button */
+        .close {
+        color: white;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-container">
+        <div class="legenda-container">
+
+            <div class="legenda">
+                <!--<button class="btn-legenda" onclick="editButton()">Edit Button</button>-->
+
+
+                <div class="Buttons-container">
+                    <h3>Add or remove buttons</h3>
+                    <button id="mainButton" class="addButton-container" onclick="createButton()">Create Button(s)</button>
+                    <span id="counter" class="btnCounter">0</span>
+                </div>
+
+            </div>
+
+            <div class="content-container" id="editable" contenteditable="false">
+                <h1>CreateQ Button Example!</h1>
+                <p>Click on the the "Create Button(s)" in the legenda</p>
+                <!--<img src="https://via.placeholder.com/150" alt="placeholder image">-->
+
+                <div id="buttonContainer"></div>
+
+                <!--HTML structure for the modal -->
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <h2>Edit Button</h2>
+                        <form id="buttonForm">
+                            <label for="buttonText">Text:</label>
+                            <input type="text" id="buttonText" name="buttonText"><br><br>
+                            
+                            <label for="buttonWidth">Width:</label>
+                            <input type="text" id="buttonWidth" name="buttonWidth" placeholder="Input in 'px'"><br><br>
+                            
+                            <label for="buttonHeight">Height:</label>
+                            <input type="text" id="buttonHeight" name="buttonHeight" placeholder="Input in 'px'"><br><br>
+                            
+                            <label for="buttonColor">Background Color:</label>
+                            <input type="color" id="buttonColor" name="buttonColor"><br><br>
+                            
+                            <input type="submit" value="Save">
+                            <input type="button" value="Delete" onclick="deleteButton()">
+                            <input type="button" value="Cancel" onclick="cancelForm()">
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const addButton = document.getElementById("addButton");
+        const buttonCounter = document.getElementById("counter");
+
+        let counter = 0;
+        let buttonCount = 0
+
+        // Create a function to update the counter
+        function updateCounter(value) {
+            counter == value
+            buttonCounter.textContent = `Created button(s): ${counter}`;
+        }
+
+        // Function to create a new button
+        function createButton() {
+            buttonCount++;
+            counter++;
+            const buttonContainer = document.getElementById('buttonContainer');
+            const newButton = document.createElement('button');
+            const newDiv = document.createElement("div");
+            const DivId = `div${buttonCount}`; // generate a unique ID for the new div element
+            newDiv.setAttribute("id", DivId);
+
+            const BtnId = `button${buttonCount}`; // generate a unique ID for the new Button element
+            newButton.setAttribute("id", BtnId);
+            newDiv.appendChild(newButton);
+            newButton.classList.add('button');
+            newButton.innerText = 'Button ' + buttonCount;
+            newButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                showForm(newButton);
+            });
+
+            buttonContainer.appendChild(newButton);
+            updateCounter();
+        }
+
+        // Function to show the form and populate it with button data
+        function showForm(button) {
+            const modal = document.getElementById("myModal");
+            const form = document.getElementById('buttonForm');
+            const buttonText = document.getElementById('buttonText');
+            const buttonWidth = document.getElementById('buttonWidth');
+            const buttonHeight = document.getElementById('buttonHeight');
+            const buttonColor = document.getElementById('buttonColor');
+
+            buttonText.value = button.innerText || '';
+            buttonWidth.value = button.style.width || '';
+            buttonHeight.value = button.style.height || '';
+            buttonColor.value = button.style.backgroundColor || '';
+
+            currentButton = button; // Store the current button reference
+
+            form.onsubmit = function (event) {
+                saveChanges(button, buttonText.value, buttonWidth.value, buttonHeight.value, buttonColor.value);
+                event.preventDefault();
+                modal.style.display = modal.style.display === "block" ? "none" : "block";
+            };
+
+            // Toggle the modal
+            modal.style.display = modal.style.display === "block" ? "none" : "block";
+        }
+
+        // Function to save the changes to a button
+        function saveChanges(button, text, width, height, color) {
+            button.innerText = text;
+            button.style.width = width;
+            button.style.height = height;
+            button.style.backgroundColor = color;
+
+            // Update the innerText color based on background color
+            if (!color || color === '#ffffff') {
+                button.style.color = 'black';
+            } else {
+                button.style.color = 'white';
+            }
+        }
+
+        // Function to delete the current button
+        function deleteButton() {
+            if (currentButton) {
+                const confirmation = confirm("Are you sure you want to delete this button?");
+                if (confirmation) {
+                    const buttonContainer = document.getElementById('buttonContainer');
+                    buttonContainer.removeChild(currentButton);
+
+                    const modal = document.getElementById("myModal");
+                    modal.style.display = "none";
+
+                    updateCounter(counter--);
+                }
+            }
+        }
+
+        // Function to cancel the form and hide it
+        function cancelForm() {
+            const modal = document.getElementById("myModal");
+            modal.style.display = "none"; 
+        }
+
+        // add a click event listener to the modal window
+        window.addEventListener("click", (event) => {
+            // When the user clicks anywhere outside of the modal, close it
+            const modal = document.getElementById("myModal");
+            if(event.target == modal) {
+                modal.style.display = "none"; 
+            }
+        });
+
+        if (counter === 0) {
+            document.getElementById("counter").innerText = counter;
+        }
+    </script>
+</body>
+</html>
