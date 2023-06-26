@@ -8,6 +8,92 @@
     <title>PlayGround CreateQDemo</title>
     <script src="JS/overviewmodal.js"></script>
     <style>
+
+       /* Aangepast kleurenpalet */
+       :root {
+            --primary-color: #0E3A4A; /* Lichtblauw */
+            --secondary-color: #54BD84; /* Lichtgroen */
+            --accent-color: #FFD700;
+            --background-color: #F5F5F5;
+        }
+
+        body {
+            background-color: var(--background-color);
+        }
+
+        .container-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .legenda-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            background-color: var(--primary-color);
+        }
+
+        .legenda {
+            flex: 1;
+            margin-right: 20px;
+            padding: 10px;
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            background-color: #fff;
+        }
+
+        .content-container {
+            flex: 2;
+            padding: 10px;
+            border: 2px solid var(--secondary-color);
+            border-radius: 10px;
+            background-color: #fff;
+        }
+
+        .Buttons-container {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-top: 1px solid var(--secondary-color);
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+        .addButton-container {
+            padding: 10px 20px;
+            margin-bottom: 5px;
+            background-color: var(--secondary-color);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .addButton-container:hover {
+            background-color: #54BD84;
+        }
+
+        .button {
+            margin: 5px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: var(--secondary-color);
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #1BA9C5;
+        }
+        
         .container-container {
             display: block;
             position: absolute;
