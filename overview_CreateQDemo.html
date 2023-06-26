@@ -267,6 +267,12 @@
                             
                             <label for="buttonColor">Background Color:</label>
                             <input type="color" id="buttonColor" name="buttonColor"><br><br>
+
+                            <label for="buttonShape">Button Shape:</label>
+                            <select id="buttonShape" name="buttonShape" onchange="updateButtonShape()">
+                              <option value="recangle">Recangle</option>
+                              <option value="circle">Circle</option>
+                            </select><br><br>
                             
                             <input type="submit" value="Save">
                             <input type="button" value="Delete" onclick="deleteButton()">
@@ -324,16 +330,18 @@
             const buttonWidth = document.getElementById('buttonWidth');
             const buttonHeight = document.getElementById('buttonHeight');
             const buttonColor = document.getElementById('buttonColor');
+            const buttonShape = document.getElementById('buttonShape');
 
             buttonText.value = button.innerText || '';
             buttonWidth.value = button.style.width || '';
             buttonHeight.value = button.style.height || '';
             buttonColor.value = button.style.backgroundColor || '';
+            buttonShape.value = button.getAttribute("buttonShape");
 
             currentButton = button; // Store the current button reference
 
             form.onsubmit = function (event) {
-                saveChanges(button, buttonText.value, buttonWidth.value, buttonHeight.value, buttonColor.value);
+                saveChanges(button, buttonText.value, buttonWidth.value, buttonHeight.value, buttonColor.value, buttonShape.value);
                 event.preventDefault();
                 modal.style.display = modal.style.display === "block" ? "none" : "block";
             };
@@ -342,18 +350,51 @@
             modal.style.display = modal.style.display === "block" ? "none" : "block";
         }
 
+        addEventListener("click", (event) => {
+
+        })
+
         // Function to save the changes to a button
-        function saveChanges(button, text, width, height, color) {
+        function saveChanges(button, text, width, height, color, shape) {
             button.innerText = text;
             button.style.width = width;
             button.style.height = height;
             button.style.backgroundColor = color;
+            button.setAttribute('buttonShape', shape);
 
             // Update the innerText color based on background color
             if (!color || color === '#ffffff') {
                 button.style.color = 'black';
             } else {
                 button.style.color = 'white';
+            }
+
+            // Update the button shape inline
+            if (shape === 'circle') {
+                button.style.borderRadius = '50%';
+            } else {
+                button.style.borderRadius = '0';
+            }
+
+            currentButton = null; // Clear the current button reference
+        }
+
+        // Function to update the button shape inline
+        function updateButtonShape() {
+        const shapeSelect = document.getElementById('buttonShape');
+        const selectedShape = shapeSelect.value;
+
+            if (currentButton) {
+                const buttonWidth = document.getElementById('buttonWidth');
+                const buttonHeight = document.getElementById('buttonHeight');
+
+                if (selectedShape === 'circle') {
+                buttonWidth.value = '';
+                buttonHeight.value = '';
+                currentButton.style.borderRadius = '50%';
+                } else {
+                currentButton.style.borderRadius = '0';
+                }
             }
         }
 
