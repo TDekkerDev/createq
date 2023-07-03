@@ -21,61 +21,6 @@
             background-color: var(--background-color);
         }
 
-        .container-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .legenda-container {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: flex-start;
-            width: 90%;
-            max-width: 1200px;
-            margin: 20px;
-            padding: 20px;
-            border: 2px solid var(--primary-color);
-            border-radius: 10px;
-            background-color: var(--primary-color);
-        }
-
-        .legenda {
-            flex: 1;
-            margin-right: 20px;
-            padding: 10px;
-            border: 2px solid var(--primary-color);
-            border-radius: 10px;
-            background-color: #fff;
-        }
-
-        .content-container {
-            flex: 2;
-            padding: 10px;
-            border: 2px solid var(--secondary-color);
-            border-radius: 10px;
-            background-color: #fff;
-        }
-
-        .Buttons-container {
-            padding: 10px;
-            margin-bottom: 20px;
-            border-top: 1px solid var(--secondary-color);
-            border-bottom: 1px solid var(--secondary-color);
-        }
-
-        .addButton-container {
-            padding: 10px 20px;
-            margin-bottom: 5px;
-            background-color: var(--secondary-color);
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
         .addButton-container:hover {
             background-color: #54BD84;
         }
@@ -93,113 +38,6 @@
         .button:hover {
             background-color: #1BA9C5;
         }
-        
-        .container-container {
-            display: block;
-            position: absolute;
-            margin: 50px;
-        }
-
-        .legenda-container {
-            display: inline-flex;
-            flex-direction: row;
-            align-items: flex-start;
-            width: auto;
-            height: 650px;
-            padding: 5px;
-            border: 2px solid black;
-        }
-
-        .legenda {
-            display: inline-flex;
-            flex-direction: column;
-            min-height: -webkit-fill-available;
-            margin: 1px;
-            margin-right: 10px;
-            border: 2px solid black;
-        }
-
-        .content-container {
-            display: inline-flex;
-            flex-direction: column;
-            align-items: baseline;
-            min-height: -webkit-fill-available;
-            border: 2px solid black;
-        }
-
-        .btn-legenda {
-            display: block;
-            padding: 5px;
-            margin: 10px;
-        }
-
-        .Buttons-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 5px;
-            margin: 10px;
-            border-top: 1px solid black;
-            border-bottom: 1px solid black;
-        }
-
-        .addButton-container {
-            padding-left: 20px;
-            padding-right: 20px;
-            margin-bottom: 5px;
-        }
-
-        .button {
-            border: none;
-            margin: 5px;
-        }
-
-        .remButton {
-            padding-left: 20px;
-            padding-right: 20px;
-            margin-top: 5px;
-        }
-        /* Disable the remove button if the count is 0 */
-        .remButton.disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-        pointer-events: none;
-        }
-
-        .btnCounter-container {
-            display: flex;
-            justify-content: center;
-        }
-
-        /* The Modal (background) */
-        .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        min-height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-        }
-
-        /* Modal Content */
-        .modal-content {
-        position: relative;
-        background-color: #fefefe;
-        margin: 10%;
-        padding: 0;
-        border: 1px solid #888;
-        width: 80%;
-        min-height: 600px;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-        -webkit-animation-name: animatetop;
-        -webkit-animation-duration: 0.4s;
-        animation-name: animatetop;
-        animation-duration: 0.4s
-        }
 
         /* Add Animation */
         @-webkit-keyframes animatetop {
@@ -212,14 +50,6 @@
         to {top:0; opacity:1}
         }
 
-        /* The Close Button */
-        .close {
-        color: white;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-        }
-
         .close:hover,
         .close:focus {
         color: #000;
@@ -229,22 +59,21 @@
     </style>
 </head>
 <body>
-    <div class="container-container">
-        <div class="legenda-container">
+    <div class="container-container" style="display: block; position: absolute; margin: 50px;">
+        <div class="legenda-container" style="display: inline-flex; flex-direction: row; align-items: flex-start; width: auto; height: 650px; padding: 5px; border: 2px solid black; justify-content: center; max-width: 1200px; margin: 20px; border-radius: 10px; background-color: var(--primary-color);">
 
-            <div class="legenda">
-                <!--<button class="btn-legenda" onclick="editButton()">Edit Button</button>-->
+            <div class="legenda" style="display: inline-flex; flex-direction: column; min-height: -webkit-fill-available; margin: 1px; margin-right: 10px; border: 2px solid black; padding: 10px; border-radius: 10px; background-color: #fff;">
 
 
-                <div class="Buttons-container">
+                <div class="Legenda-contemt-container" style="display: flex; flex-direction: column; align-items: center; padding: 5px; margin: 10px; border-top: 1px solid black; border-bottom: 1px solid black;">
                     <h3>Add or remove buttons</h3>
-                    <button id="mainButton" class="addButton-container" onclick="createButton()">Create Button(s)</button>
+                    <button id="mainButton" class="addButton-container" onclick="createButton()" style="padding: 10px 20px; margin-bottom: 5px; background-color: var(--secondary-color); color: #fff; border: none; border-radius: 5px; cursor: pointer;">Create Button(s)</button>
                     <span id="counter" class="btnCounter">0</span>
                 </div>
 
             </div>
 
-            <div class="content-container" id="editable" contenteditable="false">
+            <div class="content-container" id="editable" contenteditable="false" style="display: inline-flex; flex-direction: column; align-items: baseline; min-height: -webkit-fill-available; border: 2px solid black; flex: 2; padding: 10px; border-radius: 10px; background-color: #fff;">
                 <h1>CreateQ Button Example!</h1>
                 <p>Click on the the "Create Button(s)" in the legenda</p>
                 <!--<img src="https://via.placeholder.com/150" alt="placeholder image">-->
@@ -252,8 +81,8 @@
                 <div id="buttonContainer"></div>
 
                 <!--HTML structure for the modal -->
-                <div id="myModal" class="modal">
-                    <div class="modal-content">
+                <div id="myModal" class="modal" style="display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; min-height: 100%; overflow: auto; background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.4);">
+                    <div class="modal-content" style="position: relative; background-color: #fefefe; margin: 10%; padding: 0; border: 1px solid #888; width: 80%; min-height: 600px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);  animation-name: animatetop; animation-duration: 0.4s">
                         <h2>Edit Button</h2>
                         <form id="buttonForm">
                             <label for="buttonText">Text:</label>
