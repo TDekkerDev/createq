@@ -21,10 +21,6 @@
             background-color: var(--background-color);
         }
 
-        .addButton-container:hover {
-            background-color: #54BD84;
-        }
-
         .button {
             margin: 5px;
             padding: 10px;
@@ -40,22 +36,6 @@
         }
 
         /* Add Animation */
-        @-webkit-keyframes animatetop {
-        from {top:-300px; opacity:0} 
-        to {top:0; opacity:1}
-        }
-
-        @keyframes animatetop {
-        from {top:-300px; opacity:0}
-        to {top:0; opacity:1}
-        }
-
-        .close:hover,
-        .close:focus {
-        color: #000;
-        text-decoration: none;
-        cursor: pointer;
-        }
     </style>
 </head>
 <body>
@@ -67,7 +47,7 @@
 
                 <div class="Legenda-contemt-container" style="display: flex; flex-direction: column; align-items: center; padding: 5px; margin: 10px; border-top: 1px solid black; border-bottom: 1px solid black;">
                     <h3>Add or remove buttons</h3>
-                    <button id="mainButton" class="addButton-container" onclick="createButton()" style="padding: 10px 20px; margin-bottom: 5px; background-color: var(--secondary-color); color: #fff; border: none; border-radius: 5px; cursor: pointer;">Create Button(s)</button>
+                    <button id="mainButton" class="addButton-container" onclick="createButton()" style="padding: 10px 20px; margin-bottom: 5px; background-color: var(--secondary-color); :hover{background-color: #54BD84;}; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Create Button(s)</button>
                     <span id="counter" class="btnCounter">0</span>
                 </div>
 
@@ -81,8 +61,8 @@
                 <div id="buttonContainer"></div>
 
                 <!--HTML structure for the modal -->
-                <div id="myModal" class="modal" style="display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; min-height: 100%; overflow: auto; background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.4);">
-                    <div class="modal-content" style="position: relative; background-color: #fefefe; margin: 10%; padding: 0; border: 1px solid #888; width: 80%; min-height: 600px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);  animation-name: animatetop; animation-duration: 0.4s">
+                <div id="myModal" class="modal" style="display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; min-height: 100%; overflow: auto; background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.4); :hover,:focus{color: #000; text-decoration: none; cursor: pointer;}">
+                    <div class="modal-content" style="position: relative; background-color: #fefefe; margin: 10%; padding: 0; border: 1px solid #888; width: 80%; min-height: 600px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);">
                         <h2>Edit Button</h2>
                         <form id="buttonForm">
                             <label for="buttonText">Text:</label>
@@ -98,7 +78,7 @@
                             <input type="color" id="buttonColor" name="buttonColor"><br><br>
 
                             <label for="buttonShape">Button Shape:</label>
-                            <select id="buttonShape" name="buttonShape" onchange="updateButtonShape()">
+                            <select id="buttonShape" name="buttonShape">
                               <option value="recangle">Recangle</option>
                               <option value="circle">Circle</option>
                             </select><br><br>
@@ -221,6 +201,10 @@
                 button.setAttribute('onclick')
             }
 
+            if (doAction === null) {
+                button.setAttribute('onclick')
+            }
+
             currentButton = null; // Clear the current button reference
         }
 
@@ -239,25 +223,6 @@
 
         function switchOff() {
         console.log('Button Action: switchOff');
-        }
-
-        // Function to update the button shape inline
-        function updateButtonShape() {
-        const shapeSelect = document.getElementById('buttonShape');
-        const selectedShape = shapeSelect.value;
-
-            if (currentButton) {
-                const buttonWidth = document.getElementById('buttonWidth');
-                const buttonHeight = document.getElementById('buttonHeight');
-
-                if (selectedShape === 'circle') {
-                buttonWidth.value = '';
-                buttonHeight.value = '';
-                currentButton.style.borderRadius = '50%';
-                } else {
-                currentButton.style.borderRadius = '0';
-                }
-            }
         }
 
         // Function to delete the current button
@@ -287,13 +252,10 @@
             // When the user clicks anywhere outside of the modal, close it
             const modal = document.getElementById("myModal");
             if(event.target == modal) {
-                modal.style.display = "none"; 
+                modal.style.display = "none";
             }
         });
-
-        if (counter === 0) {
-            document.getElementById("counter").innerText = counter;
-        }
+        
     </script>
 </body>
 </html>
