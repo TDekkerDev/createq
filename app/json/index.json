@@ -1,0 +1,889 @@
+{
+  "node": "root",
+  "child": [
+    {
+      "node": "text",
+      "text": "\n    "
+    },
+    {
+      "node": "element",
+      "tag": "div",
+      "attr": {
+        "class": "container-container",
+        "style": [
+          "display:",
+          "block;",
+          "position:",
+          "absolute;",
+          "margin:",
+          "50px;"
+        ]
+      },
+      "child": [
+        {
+          "node": "text",
+          "text": "\n        "
+        },
+        {
+          "node": "element",
+          "tag": "div",
+          "attr": {
+            "class": "legenda-container",
+            "style": [
+              "display:",
+              "inline-flex;",
+              "flex-direction:",
+              "row;",
+              "align-items:",
+              "flex-start;",
+              "width:",
+              "auto;",
+              "height:",
+              "650px;",
+              "padding:",
+              "5px;",
+              "border:",
+              "2px",
+              "solid",
+              "black;",
+              "justify-content:",
+              "center;",
+              "max-width:",
+              "1200px;",
+              "margin:",
+              "20px;",
+              "border-radius:",
+              "10px;",
+              "background-color:",
+              "var(--primary-color);"
+            ]
+          },
+          "child": [
+            {
+              "node": "text",
+              "text": "\n\n            "
+            },
+            {
+              "node": "element",
+              "tag": "div",
+              "attr": {
+                "class": "legenda",
+                "style": [
+                  "display:",
+                  "inline-flex;",
+                  "flex-direction:",
+                  "column;",
+                  "min-height:",
+                  "-webkit-fill-available;",
+                  "margin:",
+                  "1px;",
+                  "margin-right:",
+                  "10px;",
+                  "border:",
+                  "2px",
+                  "solid",
+                  "black;",
+                  "padding:",
+                  "10px;",
+                  "border-radius:",
+                  "10px;",
+                  "background-color:",
+                  "#fff;"
+                ]
+              },
+              "child": [
+                {
+                  "node": "text",
+                  "text": "\n\n\n                "
+                },
+                {
+                  "node": "element",
+                  "tag": "div",
+                  "attr": {
+                    "class": "Legenda-contemt-container",
+                    "style": [
+                      "display:",
+                      "flex;",
+                      "flex-direction:",
+                      "column;",
+                      "align-items:",
+                      "center;",
+                      "padding:",
+                      "5px;",
+                      "margin:",
+                      "10px;",
+                      "border-top:",
+                      "1px",
+                      "solid",
+                      "black;",
+                      "border-bottom:",
+                      "1px",
+                      "solid",
+                      "black;"
+                    ]
+                  },
+                  "child": [
+                    {
+                      "node": "text",
+                      "text": "\n                    "
+                    },
+                    {
+                      "node": "element",
+                      "tag": "h3",
+                      "child": [
+                        {
+                          "node": "text",
+                          "text": "Add or remove buttons"
+                        }
+                      ]
+                    },
+                    {
+                      "node": "text",
+                      "text": "\n                    "
+                    },
+                    {
+                      "node": "element",
+                      "tag": "button",
+                      "attr": {
+                        "id": "mainButton",
+                        "class": "addButton-container",
+                        "onclick": "createButton()",
+                        "style": [
+                          "padding:",
+                          "10px",
+                          "20px;",
+                          "margin-bottom:",
+                          "5px;",
+                          "background-color:",
+                          "var(--secondary-color);",
+                          "color:",
+                          "#fff;",
+                          "border:",
+                          "none;",
+                          "border-radius:",
+                          "5px;",
+                          "cursor:",
+                          "pointer;"
+                        ]
+                      },
+                      "child": [
+                        {
+                          "node": "text",
+                          "text": "Create Button(s)"
+                        }
+                      ]
+                    },
+                    {
+                      "node": "text",
+                      "text": "\n                    "
+                    },
+                    {
+                      "node": "element",
+                      "tag": "button",
+                      "attr": {
+                        "id": "mainButton",
+                        "class": "addButton-container",
+                        "onclick": "expo()",
+                        "style": [
+                          "padding:",
+                          "10px",
+                          "20px;",
+                          "margin-bottom:",
+                          "5px;",
+                          "background-color:",
+                          "var(--secondary-color);",
+                          "color:",
+                          "#fff;",
+                          "border:",
+                          "none;",
+                          "border-radius:",
+                          "5px;",
+                          "cursor:",
+                          "pointer;"
+                        ]
+                      },
+                      "child": [
+                        {
+                          "node": "text",
+                          "text": "export"
+                        }
+                      ]
+                    },
+                    {
+                      "node": "text",
+                      "text": "\n                    "
+                    },
+                    {
+                      "node": "element",
+                      "tag": "span",
+                      "attr": {
+                        "id": "counter",
+                        "class": "btnCounter"
+                      },
+                      "child": [
+                        {
+                          "node": "text",
+                          "text": "Created button(s): 4"
+                        }
+                      ]
+                    },
+                    {
+                      "node": "text",
+                      "text": "\n                "
+                    }
+                  ]
+                },
+                {
+                  "node": "text",
+                  "text": "\n\n            "
+                }
+              ]
+            },
+            {
+              "node": "text",
+              "text": "\n\n            "
+            },
+            {
+              "node": "element",
+              "tag": "div",
+              "attr": {
+                "class": "content-container",
+                "id": "editable",
+                "contenteditable": "false",
+                "style": [
+                  "display:",
+                  "inline-flex;",
+                  "flex-direction:",
+                  "column;",
+                  "align-items:",
+                  "baseline;",
+                  "min-height:",
+                  "-webkit-fill-available;",
+                  "border:",
+                  "2px",
+                  "solid",
+                  "black;",
+                  "flex:",
+                  "2;",
+                  "padding:",
+                  "10px;",
+                  "border-radius:",
+                  "10px;",
+                  "background-color:",
+                  "#fff;"
+                ]
+              },
+              "child": [
+                {
+                  "node": "text",
+                  "text": "\n                "
+                },
+                {
+                  "node": "element",
+                  "tag": "h1",
+                  "child": [
+                    {
+                      "node": "text",
+                      "text": "CreateQ Button Example!"
+                    }
+                  ]
+                },
+                {
+                  "node": "text",
+                  "text": "\n                "
+                },
+                {
+                  "node": "element",
+                  "tag": "p",
+                  "child": [
+                    {
+                      "node": "text",
+                      "text": "Click on the the \"Create Button(s)\" in the legenda"
+                    }
+                  ]
+                },
+                {
+                  "node": "text",
+                  "text": "\n                "
+                },
+                {
+                  "node": "comment",
+                  "text": "<img src=\"https://via.placeholder.com/150\" alt=\"placeholder image\">"
+                },
+                {
+                  "node": "text",
+                  "text": "\n\n                "
+                },
+                {
+                  "node": "element",
+                  "tag": "div",
+                  "attr": {
+                    "id": "buttonContainer"
+                  },
+                  "child": [
+                    {
+                      "node": "element",
+                      "tag": "button",
+                      "attr": {
+                        "id": "button1",
+                        "class": "button",
+                        "buttonshape": "",
+                        "style": [
+                          "background-color:",
+                          "rgb(0,",
+                          "0,",
+                          "0);",
+                          "color:",
+                          "white;",
+                          "border-radius:",
+                          "0px;"
+                        ]
+                      },
+                      "child": [
+                        {
+                          "node": "text",
+                          "text": "Button 1"
+                        }
+                      ]
+                    },
+                    {
+                      "node": "element",
+                      "tag": "button",
+                      "attr": {
+                        "id": "button2",
+                        "class": "button"
+                      },
+                      "child": [
+                        {
+                          "node": "text",
+                          "text": "Button 2"
+                        }
+                      ]
+                    },
+                    {
+                      "node": "element",
+                      "tag": "button",
+                      "attr": {
+                        "id": "button3",
+                        "class": "button"
+                      },
+                      "child": [
+                        {
+                          "node": "text",
+                          "text": "Button 3"
+                        }
+                      ]
+                    },
+                    {
+                      "node": "element",
+                      "tag": "button",
+                      "attr": {
+                        "id": "button4",
+                        "class": "button"
+                      },
+                      "child": [
+                        {
+                          "node": "text",
+                          "text": "Button 4"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "node": "text",
+                  "text": "\n\n                "
+                },
+                {
+                  "node": "comment",
+                  "text": "HTML structure for the modal "
+                },
+                {
+                  "node": "text",
+                  "text": "\n                "
+                },
+                {
+                  "node": "element",
+                  "tag": "div",
+                  "attr": {
+                    "id": "myModal",
+                    "class": "modal",
+                    "style": [
+                      "display:",
+                      "none;",
+                      "position:",
+                      "fixed;",
+                      "z-index:",
+                      "1;",
+                      "left:",
+                      "0px;",
+                      "top:",
+                      "0px;",
+                      "width:",
+                      "100%;",
+                      "min-height:",
+                      "100%;",
+                      "overflow:",
+                      "auto;",
+                      "background-color:",
+                      "rgba(0,",
+                      "0,",
+                      "0,",
+                      "0.4);"
+                    ]
+                  },
+                  "child": [
+                    {
+                      "node": "text",
+                      "text": "\n                    "
+                    },
+                    {
+                      "node": "element",
+                      "tag": "div",
+                      "attr": {
+                        "class": "modal-content",
+                        "style": [
+                          "position:",
+                          "relative;",
+                          "background-color:",
+                          "#fefefe;",
+                          "margin:",
+                          "10%;",
+                          "padding:",
+                          "0;",
+                          "border:",
+                          "1px",
+                          "solid",
+                          "#888;",
+                          "width:",
+                          "80%;",
+                          "min-height:",
+                          "600px;",
+                          "box-shadow:",
+                          "0",
+                          "4px",
+                          "8px",
+                          "0",
+                          "rgba(0,0,0,0.2),0",
+                          "6px",
+                          "20px",
+                          "0",
+                          "rgba(0,0,0,0.19);",
+                          "",
+                          "animation-name:",
+                          "animatetop;",
+                          "animation-duration:",
+                          "0.4s"
+                        ]
+                      },
+                      "child": [
+                        {
+                          "node": "text",
+                          "text": "\n                        "
+                        },
+                        {
+                          "node": "element",
+                          "tag": "h2",
+                          "child": [
+                            {
+                              "node": "text",
+                              "text": "Edit Button"
+                            }
+                          ]
+                        },
+                        {
+                          "node": "text",
+                          "text": "\n                        "
+                        },
+                        {
+                          "node": "element",
+                          "tag": "form",
+                          "attr": {
+                            "id": "buttonForm"
+                          },
+                          "child": [
+                            {
+                              "node": "text",
+                              "text": "\n                            "
+                            },
+                            {
+                              "node": "element",
+                              "tag": "label",
+                              "attr": {
+                                "for": "buttonText"
+                              },
+                              "child": [
+                                {
+                                  "node": "text",
+                                  "text": "Text:"
+                                }
+                              ]
+                            },
+                            {
+                              "node": "text",
+                              "text": "\n                            "
+                            },
+                            {
+                              "node": "element",
+                              "tag": "input",
+                              "attr": {
+                                "type": "text",
+                                "id": "buttonText",
+                                "name": "buttonText"
+                              }
+                            },
+                            {
+                              "node": "element",
+                              "tag": "br"
+                            },
+                            {
+                              "node": "element",
+                              "tag": "br"
+                            },
+                            {
+                              "node": "text",
+                              "text": "\n                            \n                            "
+                            },
+                            {
+                              "node": "element",
+                              "tag": "label",
+                              "attr": {
+                                "for": "buttonWidth"
+                              },
+                              "child": [
+                                {
+                                  "node": "text",
+                                  "text": "Width:"
+                                }
+                              ]
+                            },
+                            {
+                              "node": "text",
+                              "text": "\n                            "
+                            },
+                            {
+                              "node": "element",
+                              "tag": "input",
+                              "attr": {
+                                "type": "text",
+                                "id": "buttonWidth",
+                                "name": "buttonWidth",
+                                "placeholder": [
+                                  "Input",
+                                  "in",
+                                  "'px'"
+                                ]
+                              }
+                            },
+                            {
+                              "node": "element",
+                              "tag": "br"
+                            },
+                            {
+                              "node": "element",
+                              "tag": "br"
+                            },
+                            {
+                              "node": "text",
+                              "text": "\n                            \n                            "
+                            },
+                            {
+                              "node": "element",
+                              "tag": "label",
+                              "attr": {
+                                "for": "buttonHeight"
+                              },
+                              "child": [
+                                {
+                                  "node": "text",
+                                  "text": "Height:"
+                                }
+                              ]
+                            },
+                            {
+                              "node": "text",
+                              "text": "\n                            "
+                            },
+                            {
+                              "node": "element",
+                              "tag": "input",
+                              "attr": {
+                                "type": "text",
+                                "id": "buttonHeight",
+                                "name": "buttonHeight",
+                                "placeholder": [
+                                  "Input",
+                                  "in",
+                                  "'px'"
+                                ]
+                              }
+                            },
+                            {
+                              "node": "element",
+                              "tag": "br"
+                            },
+                            {
+                              "node": "element",
+                              "tag": "br"
+                            },
+                            {
+                              "node": "text",
+                              "text": "\n                            \n                            "
+                            },
+                            {
+                              "node": "element",
+                              "tag": "label",
+                              "attr": {
+                                "for": "buttonColor"
+                              },
+                              "child": [
+                                {
+                                  "node": "text",
+                                  "text": "Background Color:"
+                                }
+                              ]
+                            },
+                            {
+                              "node": "text",
+                              "text": "\n                            "
+                            },
+                            {
+                              "node": "element",
+                              "tag": "input",
+                              "attr": {
+                                "type": "color",
+                                "id": "buttonColor",
+                                "name": "buttonColor"
+                              }
+                            },
+                            {
+                              "node": "element",
+                              "tag": "br"
+                            },
+                            {
+                              "node": "element",
+                              "tag": "br"
+                            },
+                            {
+                              "node": "text",
+                              "text": "\n\n                            "
+                            },
+                            {
+                              "node": "element",
+                              "tag": "label",
+                              "attr": {
+                                "for": "buttonShape"
+                              },
+                              "child": [
+                                {
+                                  "node": "text",
+                                  "text": "Button Shape:"
+                                }
+                              ]
+                            },
+                            {
+                              "node": "text",
+                              "text": "\n                            "
+                            },
+                            {
+                              "node": "element",
+                              "tag": "select",
+                              "attr": {
+                                "id": "buttonShape",
+                                "name": "buttonShape",
+                                "onchange": "updateButtonShape()"
+                              },
+                              "child": [
+                                {
+                                  "node": "text",
+                                  "text": "\n                              "
+                                },
+                                {
+                                  "node": "element",
+                                  "tag": "option",
+                                  "attr": {
+                                    "value": "recangle"
+                                  },
+                                  "child": [
+                                    {
+                                      "node": "text",
+                                      "text": "Recangle"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "node": "text",
+                                  "text": "\n                              "
+                                },
+                                {
+                                  "node": "element",
+                                  "tag": "option",
+                                  "attr": {
+                                    "value": "circle"
+                                  },
+                                  "child": [
+                                    {
+                                      "node": "text",
+                                      "text": "Circle"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "node": "text",
+                                  "text": "\n                            "
+                                }
+                              ]
+                            },
+                            {
+                              "node": "element",
+                              "tag": "br"
+                            },
+                            {
+                              "node": "element",
+                              "tag": "br"
+                            },
+                            {
+                              "node": "text",
+                              "text": "\n                            \n                            "
+                            },
+                            {
+                              "node": "element",
+                              "tag": "input",
+                              "attr": {
+                                "type": "submit",
+                                "value": "Save"
+                              }
+                            },
+                            {
+                              "node": "text",
+                              "text": "\n                            "
+                            },
+                            {
+                              "node": "element",
+                              "tag": "input",
+                              "attr": {
+                                "type": "button",
+                                "value": "Delete",
+                                "onclick": "deleteButton()"
+                              }
+                            },
+                            {
+                              "node": "text",
+                              "text": "\n                            "
+                            },
+                            {
+                              "node": "element",
+                              "tag": "input",
+                              "attr": {
+                                "type": "button",
+                                "value": "Cancel",
+                                "onclick": "cancelForm()"
+                              }
+                            },
+                            {
+                              "node": "text",
+                              "text": "\n                        "
+                            }
+                          ]
+                        },
+                        {
+                          "node": "text",
+                          "text": "\n                    "
+                        }
+                      ]
+                    },
+                    {
+                      "node": "text",
+                      "text": "\n                "
+                    }
+                  ]
+                },
+                {
+                  "node": "text",
+                  "text": "\n                \n            "
+                }
+              ]
+            },
+            {
+              "node": "text",
+              "text": "\n        "
+            }
+          ]
+        },
+        {
+          "node": "text",
+          "text": "\n    "
+        }
+      ]
+    },
+    {
+      "node": "text",
+      "text": "\n\n    "
+    },
+    {
+      "node": "element",
+      "tag": "script",
+      "child": [
+        {
+          "node": "text",
+          "text": "\n        const addButton = document.getElementById(\"addButton\");\n        const buttonCounter = document.getElementById(\"counter\");\n\n        let counter = 0;\n        let buttonCount = 0\n\n        // Create a function to update the counter\n        function updateCounter(value) {\n            counter == value\n            buttonCounter.textContent = `Created button(s): ${counter}`;\n        }\n\n        // Function to create a new button\n        function createButton() {\n            buttonCount++;\n            counter++;\n            const buttonContainer = document.getElementById('buttonContainer');\n            const newButton = document.createElement('button');\n            const newDiv = document.createElement(\"div\");\n            const DivId = `div${buttonCount}`; // generate a unique ID for the new div element\n            newDiv.setAttribute(\"id\", DivId);\n\n            const BtnId = `button${buttonCount}`; // generate a unique ID for the new Button element\n            newButton.setAttribute(\"id\", BtnId);\n            newDiv.appendChild(newButton);\n            newButton.classList.add('button');\n            newButton.innerText = 'Button ' + buttonCount;\n            newButton.addEventListener('click', (event) => {\n                event.preventDefault();\n                showForm(newButton);\n            });\n\n            buttonContainer.appendChild(newButton);\n            updateCounter();\n        }\n\n        // Function to show the form and populate it with button data\n        function showForm(button) {\n            const modal = document.getElementById(\"myModal\");\n            const form = document.getElementById('buttonForm');\n            const buttonText = document.getElementById('buttonText');\n            const buttonWidth = document.getElementById('buttonWidth');\n            const buttonHeight = document.getElementById('buttonHeight');\n            const buttonColor = document.getElementById('buttonColor');\n            const buttonShape = document.getElementById('buttonShape');\n\n            buttonText.value = button.innerText || '';\n            buttonWidth.value = button.style.width || '';\n            buttonHeight.value = button.style.height || '';\n            buttonColor.value = button.style.backgroundColor || '';\n            buttonShape.value = button.getAttribute(\"buttonShape\");\n\n            currentButton = button; // Store the current button reference\n\n            form.onsubmit = function (event) {\n                saveChanges(button, buttonText.value, buttonWidth.value, buttonHeight.value, buttonColor.value, buttonShape.value);\n                event.preventDefault();\n                modal.style.display = modal.style.display === \"block\" ? \"none\" : \"block\";\n            };\n\n            // Toggle the modal\n            modal.style.display = modal.style.display === \"block\" ? \"none\" : \"block\";\n        }\n\n        addEventListener(\"click\", (event) => {\n\n        })\n\n        // Function to save the changes to a button\n        function saveChanges(button, text, width, height, color, shape) {\n            button.innerText = text;\n            button.style.width = width;\n            button.style.height = height;\n            button.style.backgroundColor = color;\n            button.setAttribute('buttonShape', shape);\n\n            // Update the innerText color based on background color\n            if (!color || color === '#ffffff') {\n                button.style.color = 'black';\n            } else {\n                button.style.color = 'white';\n            }\n\n            // Update the button shape inline\n            if (shape === 'circle') {\n                button.style.borderRadius = '50%';\n            } else {\n                button.style.borderRadius = '0';\n            }\n\n            currentButton = null; // Clear the current button reference\n        }\n\n        // Function to update the button shape inline\n        function updateButtonShape() {\n        const shapeSelect = document.getElementById('buttonShape');\n        const selectedShape = shapeSelect.value;\n\n            if (currentButton) {\n                const buttonWidth = document.getElementById('buttonWidth');\n                const buttonHeight = document.getElementById('buttonHeight');\n\n                if (selectedShape === 'circle') {\n                buttonWidth.value = '';\n                buttonHeight.value = '';\n                currentButton.style.borderRadius = '50%';\n                } else {\n                currentButton.style.borderRadius = '0';\n                }\n            }\n        }\n\n        // Function to delete the current button\n        function deleteButton() {\n            if (currentButton) {\n                const confirmation = confirm(\"Are you sure you want to delete this button?\");\n                if (confirmation) {\n                    const buttonContainer = document.getElementById('buttonContainer');\n                    buttonContainer.removeChild(currentButton);\n\n                    const modal = document.getElementById(\"myModal\");\n                    modal.style.display = \"none\";\n\n                    updateCounter(counter--);\n                }\n            }\n        }\n\n        // Function to cancel the form and hide it\n        function cancelForm() {\n            const modal = document.getElementById(\"myModal\");\n            modal.style.display = \"none\"; \n        }\n\n        // add a click event listener to the modal window\n        window.addEventListener(\"click\", (event) => {\n            // When the user clicks anywhere outside of the modal, close it\n            const modal = document.getElementById(\"myModal\");\n            if(event.target == modal) {\n                modal.style.display = \"none\"; \n            }\n        });\n\n        if (counter === 0) {\n            document.getElementById(\"counter\").innerText = counter;\n        }\n    "
+        }
+      ]
+    },
+    {
+      "node": "text",
+      "text": "\n    "
+    },
+    {
+      "node": "element",
+      "tag": "script",
+      "attr": {
+        "src": "Compiler/htmlparser.js"
+      },
+      "child": [
+        {
+          "node": "text",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "node": "text",
+      "text": "\n"
+    },
+    {
+      "node": "element",
+      "tag": "script",
+      "attr": {
+        "src": "Compiler/html2json.js"
+      },
+      "child": [
+        {
+          "node": "text",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "node": "text",
+      "text": "\n"
+    },
+    {
+      "node": "element",
+      "tag": "script",
+      "attr": {
+        "src": "Compiler/html_json.js"
+      },
+      "child": [
+        {
+          "node": "text",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "node": "text",
+      "text": "\n\n"
+    }
+  ]
+}
