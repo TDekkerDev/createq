@@ -102,6 +102,14 @@
                               <option value="recangle">Recangle</option>
                               <option value="circle">Circle</option>
                             </select><br><br>
+
+                            <label for="buttonAction">Button Action:</label>
+                            <select id="buttonAction" name="buttonAction">
+                              <option value="switchUp">Switch Up</option>
+                              <option value="switchDown">Switch Down</option>
+                              <option value="switchOn">Switch On</option>
+                              <option value="switchOff">Switch Off</option>
+                            </select><br><br>
                             
                             <input type="submit" value="Save">
                             <input type="button" value="Delete" onclick="deleteButton()">
@@ -120,6 +128,7 @@
 
         let counter = 0;
         let buttonCount = 0
+        let currentButton = null;
 
         // Create a function to update the counter
         function updateCounter(value) {
@@ -160,17 +169,19 @@
             const buttonHeight = document.getElementById('buttonHeight');
             const buttonColor = document.getElementById('buttonColor');
             const buttonShape = document.getElementById('buttonShape');
+            const buttonAction = document.getElementById('buttonAction');
 
             buttonText.value = button.innerText || '';
             buttonWidth.value = button.style.width || '';
             buttonHeight.value = button.style.height || '';
             buttonColor.value = button.style.backgroundColor || '';
             buttonShape.value = button.getAttribute("buttonShape");
+            buttonAction.value = button.getAttribute("onclick");
 
             currentButton = button; // Store the current button reference
 
             form.onsubmit = function (event) {
-                saveChanges(button, buttonText.value, buttonWidth.value, buttonHeight.value, buttonColor.value, buttonShape.value);
+                saveChanges(button, buttonText.value, buttonWidth.value, buttonHeight.value, buttonColor.value, buttonShape.value, buttonAction.value);
                 event.preventDefault();
                 modal.style.display = modal.style.display === "block" ? "none" : "block";
             };
@@ -184,12 +195,13 @@
         })
 
         // Function to save the changes to a button
-        function saveChanges(button, text, width, height, color, shape) {
+        function saveChanges(button, text, width, height, color, shape, doAction) {
             button.innerText = text;
             button.style.width = width;
             button.style.height = height;
             button.style.backgroundColor = color;
             button.setAttribute('buttonShape', shape);
+            button.setAttribute('onclick', doAction + "()");
 
             // Update the innerText color based on background color
             if (!color || color === '#ffffff') {
@@ -205,7 +217,28 @@
                 button.style.borderRadius = '0';
             }
 
+            if (doAction === null) {
+                button.setAttribute('onclick')
+            }
+
             currentButton = null; // Clear the current button reference
+        }
+
+        // Custom button action functions
+        function switchUp() {
+        console.log('Button Action: switchUp');
+        }
+
+        function switchDown() {
+        console.log('Button Action: switchDown');
+        }
+
+        function switchOn() {
+        console.log('Button Action: switchOn');
+        }
+
+        function switchOff() {
+        console.log('Button Action: switchOff');
         }
 
         // Function to update the button shape inline
